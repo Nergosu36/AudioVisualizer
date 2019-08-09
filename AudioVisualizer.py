@@ -5,6 +5,7 @@ import time
 import matplotlib.pyplot as plt
 import pylab
 import pygame
+import scipy as cp
 
 
 RATE = 44100
@@ -39,32 +40,7 @@ while(1):
     PK="="*int(L1/5)   
     #print(data)
     
-    '''pylab.semilogx(widmo)
-    pylab.grid()
-    pylab.savefig("03.png",dpi=100)
-    pylab.close('all')
-    
-    plt.axhline(L1)
-    pylab.grid()
-    pylab.axis([0,5,0,90])
-    pylab.savefig("04.png",dpi=100)
-    pylab.close('all')
-    
-    plt.axhline(L2)
-    pylab.grid()
-    pylab.axis([0,5,0,90])
-    pylab.savefig("05.png",dpi=100)
-    pylab.close('all')'''
-    
-    t2=time.time()
-    if(t2-t1>0.3):
-        volume=np.sqrt( np.mean(np.average(loud)**2) )
-        L2 = 20*np.log10(volume)
-        VU="-"*int(L2/5)
-        t1=0
-        loud.clear()
 
-    #print(np.min(data),"\t",np.max(data),"\t",np.average(np.abs(data)))
 
 stream.stop_stream()
 stream.close()
